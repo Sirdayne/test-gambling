@@ -1,0 +1,69 @@
+@font-face
+  font-family Intro-Regular
+  src url(../assets/fonts/Intro-Regular.otf)
+  font-weight normal
+  font-style normal
+
+@font-face
+  font-family Intro-Black
+  src url(../assets/fonts/Intro-Black.otf)
+  font-weight normal
+  font-style normal
+
+#app
+  position relative
+  width 100%
+  min-height 700px
+  height 100vh
+  font-family Intro-Regular
+  background #000
+  color #fff
+
+.cells
+  margin -43px -50px
+  background url(../assets/sprite.png) no-repeat
+  transform rotateY(180deg)
+  &-1
+    background-position 0 0px
+  &-5
+    background-position 0 -130px
+  &-10
+    background-position 0 -260px
+  &-20
+    background-position -130px 0px
+  &-30
+    background-position -130px -130px
+  &-50
+    background-position -130px -260px
+  &-100
+    background-position -260px 0px
+  &-200
+    background-position -260px -130px
+  &-250
+    background-position -260px -260px
+
+body { font-family: sans-serif; }
+
+.scene
+  perspective 0px
+
+.chip
+  width 100%
+  height 100%
+  transition transform .4s ease-out
+  transform-style preserve-3d
+  cursor pointer
+  position relative
+
+.chip.is-flipped
+  transform rotateY(180deg)
+
+.chip__face
+  position absolute
+  width 100%
+  height 100%
+  backface-visibility hidden
+
+.chip__face--back
+  transform rotateY(180deg)
+
